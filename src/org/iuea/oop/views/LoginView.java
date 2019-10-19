@@ -2,6 +2,7 @@ package org.iuea.oop.views;
 
 import javax.swing.JPanel;
 
+import java.awt.Color;
 
 /*        GROUP MEMBERS
  * MAFABI PIUS KEVIN  18/UG/039/BSSE-S
@@ -33,13 +34,12 @@ public class LoginView extends JPanel {
 		
 		
 		//Main Login Window
-		JFrame f = new JFrame();
-			f.setBounds(350, 200, 500, 400);
+		JFrame f = new JFrame();			
 			f.setTitle("Login Page");
-			f.getBackground().getColor("grey");
+			f.setBackground(Color.gray);
 			f.setLayout(null);
-
-	
+			f.setSize(500,400);
+			f.setLocationRelativeTo(null);	
 		
 		// Login Window Labels
 			//User Name label 
@@ -65,8 +65,7 @@ public class LoginView extends JPanel {
 			pp.setBounds(190, 160, 150, 25);
 			f.add(pp);
 		
-		//Login Window Buttons
-		
+		//Login Window Buttons		
 		//Login button
 		JButton mm = new JButton("Login"); 
 			mm.setBounds(100, 220, 120, 20);
@@ -77,10 +76,9 @@ public class LoginView extends JPanel {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
-			//Label for login confirmation
-			
-			String Name = "Pius";		// chosen User Name	
-			String Pwd = "pius";    //User password
+			//Label for login confirmation			
+			String Name = "raven5";		// chosen User Name	
+			String Pwd = "raven5";    //User password
 			String UserInput = p.getText();		//getting the user input	
 			String PwdInput = pp.getText();	 //getting the user password			
 					
@@ -99,12 +97,18 @@ public class LoginView extends JPanel {
 			
 			
 			//if user information is right 
-			if(confirm && access )JOptionPane.showMessageDialog(null,"User Logged in Successfully !!!");
+			if(confirm && access ) {
+				JOptionPane.showMessageDialog(null,"User Logged in Successfully !!!");				
 				
-			
+				new  LandingPage();
+				f.setVisible(false);
+			}
 			//if user information is wrong			
-			else JOptionPane.showMessageDialog(null,"UserName & Password doesn't match as expected !!!");
+			else {JOptionPane.showMessageDialog(null,"UserName & Password doesn't match as expected !!!");
+
+		
 			
+			}
 			
 
 		}          
@@ -113,8 +117,7 @@ public class LoginView extends JPanel {
 			//Login Window Cancel Button
 		JButton m = new JButton("Cancel"); 
 			m.setBounds(300	, 220, 120, 20);
-			f.add(m);
-		
+			f.add(m);		
 		// cancel action listener
 			m.addActionListener(new ActionListener() {
 			
