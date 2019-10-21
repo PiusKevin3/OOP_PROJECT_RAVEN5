@@ -104,9 +104,56 @@ public class LandingPage extends JPanel {
 		 BPanel.add(b4);		 
 //
 //			//The Student page	****TAZAN*****		
+	 TPanel = new JPanel();	
+		 TPanel.setVisible(false);
+		 TPanel.setLayout(new FlowLayout(FlowLayout.CENTER,40,10));		
+		//THE TABLE BUTTONS
+		JButton AddBtn,EditBtn,Delt;
+		AddBtn =new JButton("Add");
+		AddBtn.setBackground(Color.GREEN);			
+		EditBtn =new JButton("Edit");
+		EditBtn.setBackground(Color.ORANGE);			
+		Delt =new JButton("Delete");
+		Delt.setBackground(Color.RED);			
+		TPanel.add(AddBtn);
+		TPanel.add(EditBtn);
+		TPanel.add(Delt);	
 	
 
 //			//THE TABLE SECTION   ****TAZAN*****
+		 JTable table = new JTable();			
+		//INITIAL DATA SET
+		Object[] columnHeads = new String[] { "Registration" , "First Name","Last Name","Sex","DOB",};			
+		String[][] Students = new String[][] {
+				{ "Registration", "First Name","Last Name","Sex","DOB" },
+				{  "039/BSSE-S", "Kevin","Mafabi","Male","06/21/1990", },
+				{  "154/BCS", "Douglas","Masagazi","Male","04/28/2002", },
+				{  "155/BIT" , "Mary","Namata","Female","03/10/2000",},					
+				};
+				
+		DefaultTableModel model = new DefaultTableModel() {
+			public boolean isCellEditable(int row, int col) { //DISABLES THE EDITING OF THE TABLE
+				return false;
+				}
+				};				
+		//model.setColumnIdentifiers(columnHeads);			
+		//table.setModel(model);
+		table.setBackground(Color.white);
+		table.setForeground(Color.black);				
+			
+				model.setDataVector(Students, columnHeads);
+				table.setModel(model);
+				TPanel.add(table, BorderLayout.CENTER); //FOR ADDING TABLE TO MAIN FRAME
+				Main.add(TPanel);					
+				 
+				 //STUDENT Btn ACTION LISTENERS						
+				student.addActionListener(new ActionListener() {						
+					@Override
+					public void actionPerformed(ActionEvent e) {													
+						TPanel.setVisible(true);						
+					}          
+					});			
+				
 		 
 					
 			
