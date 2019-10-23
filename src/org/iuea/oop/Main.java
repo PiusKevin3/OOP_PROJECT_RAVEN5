@@ -12,12 +12,16 @@ package org.iuea.oop;
  * */
 
 import org.iuea.oop.views.LoginView;
+import org.iuea.oop.views.LandingPage;
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		LoginView L = new LoginView();
+		 new LoginView(); //initiating the platiform
+		
+		
+		
 
 	}
 
