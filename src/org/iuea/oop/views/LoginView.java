@@ -79,8 +79,8 @@ public class LoginView extends JPanel {
 
 			//Label for login confirmation
 			
-			String Name = "Pius";		// chosen User Name	
-			String Pwd = "pius";    //User password
+			String Name = "raven5";		// chosen User Name	
+			String Pwd = "raven5";    //User password
 			String UserInput = p.getText();		//getting the user input	
 			String PwdInput = pp.getText();	 //getting the user password			
 					
